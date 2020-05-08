@@ -5,8 +5,7 @@ services:
     image: webapp-flask1
     build: ./flask
     container_name: flask  
-    volumes:
-      - "./:/app"  
+     
   
   nginx:
     image: webapp-nginx1
@@ -15,5 +14,4 @@ services:
     ports:
       - 8080:80
 
-    depends_on:
-      - flask
+   
