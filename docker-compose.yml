@@ -1,0 +1,19 @@
+version: '3'
+services: 
+
+  flask:
+    image: webapp-flask1
+    build: ./flask
+    container_name: flask  
+    volumes:
+      - "./:/app"  
+  
+  nginx:
+    image: webapp-nginx1
+    build: ./nginx
+    container_name: nginx   
+    ports:
+      - 8080:80
+
+    depends_on:
+      - flask
